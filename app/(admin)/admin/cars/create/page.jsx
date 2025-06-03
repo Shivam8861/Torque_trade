@@ -1,4 +1,4 @@
-import { AddCarForm } from "./_components/add-car-form";
+import { AddCarForm } from "../_components/add-car-form"; // Adjust path as needed
 
 export const metadata = {
   title: "Add New Car | Admin",

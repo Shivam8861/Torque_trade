@@ -43,10 +43,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import useFetch from "@/hooks/use-fetch";
-//import { getCars, deleteCar, updateCarStatus } from "@/actions/cars";
-//import { getCars } from "@/actions/cars";
-
-//import { formatCurrency } from "@/lib/helpers";
+import { getCars, deleteCar, updateCarStatus } from "@/actions/cars";
+import { formatCurrency } from "@/lib/helpers";
 import Image from "next/image";
 
 export const CarsList = () => {
@@ -58,12 +56,12 @@ export const CarsList = () => {
   const [carToDelete, setCarToDelete] = useState(null);
 
   // Custom hooks for API calls
-  const {
-    loading: loadingCars,
-    fn: fetchCars,
-    data: carsData,
-    error: carsError,
-  } = useFetch(getCars);
+const {
+  loading: loadingCars,
+  fn: fetchCars,
+  data: carsData,
+  error: carsError,
+} = useFetch(getCars);
 
   const {
     loading: deletingCar,
@@ -142,19 +140,19 @@ export const CarsList = () => {
     switch (status) {
       case "AVAILABLE":
         return (
-          <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
+          <Badge variant="outline" className="border-green-500/50 bg-green-50 text-green-700">
             Available
           </Badge>
         );
       case "UNAVAILABLE":
         return (
-          <Badge className="bg-amber-100 text-amber-800 hover:bg-amber-100">
+          <Badge variant="outline" className="border-amber-500/50 bg-amber-50 text-amber-700">
             Unavailable
           </Badge>
         );
       case "SOLD":
         return (
-          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-100">
+          <Badge variant="outline" className="border-blue-500/50 bg-blue-50 text-blue-700">
             Sold
           </Badge>
         );

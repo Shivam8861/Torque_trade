@@ -27,7 +27,7 @@ const CarCard = ({car}) => {
             />
           </div>
         ) : (
-          <div className='w-full h-full bg-grey-200 flex items-center justify-center'>
+          <div className='w-full h-full bg-gray-200 flex items-center justify-center'>
             <CarIcon className='h-12 w-12 text-gray-700'/>
           </div>
         )} 
@@ -48,16 +48,16 @@ const CarCard = ({car}) => {
 
      <CardContent className="p-4 ">
       <div className='flex flex-col mb-2'>
-        <h3 className='text-lg font-bold line-clamp'>
-          {car.make}{car.model}
+        <h3 className='text-lg font-bold line-clamp-1'>
+          {car.make} {car.model}
         </h3>
-        <span className='text xl font-bold text-blue-600'>
+        <span className='text-xl font-bold text-blue-600'>
                 ₹{car.price.toLocaleString()}
         </span>
        </div>
 
 
-       <div className='text gray-600 mb-2 flex items-center'>
+       <div className='text-gray-600 mb-2 flex items-center'>
         <span>{car.year}</span>
         <span className='mx-2'>*</span>
         <span>{car.transmission}</span>
@@ -66,7 +66,7 @@ const CarCard = ({car}) => {
        </div>
 
        <div className='flex flex-wrap gap-1 mb-4'>
-        <Badge variant="outline" classname="bg-gray-50">
+        <Badge variant="outline" className="bg-gray-50">
           {car.bodyType}
         </Badge>
         <Badge variant ="outline" className="bg-gray-50">
